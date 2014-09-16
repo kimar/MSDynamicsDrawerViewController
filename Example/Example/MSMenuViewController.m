@@ -33,6 +33,7 @@
 #import "MSGesturesViewController.h"
 #import "MSControlsViewController.h"
 #import "MSMapViewController.h"
+#import "MSEditableTableViewController.h"
 #import "MSLongTableViewController.h"
 #import "MSMonospaceWebViewController.h"
 #import "MSMenuTableViewHeader.h"
@@ -56,7 +57,6 @@ typedef NS_ENUM(NSUInteger, MSMenuViewControllerTableViewSectionType) {
 #else
 @property (nonatomic, strong) NSDictionary *paneViewControllerClasses;
 #endif
-@property (nonatomic, strong) NSDictionary *paneViewControllerAppearanceTypes;
 @property (nonatomic, strong) NSDictionary *sectionTitles;
 @property (nonatomic, strong) NSArray *tableViewSectionBreaks;
 
@@ -90,6 +90,11 @@ typedef NS_ENUM(NSUInteger, MSMenuViewControllerTableViewSectionType) {
     return self;
 }
 
+- (void)loadView
+{
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -116,6 +121,7 @@ typedef NS_ENUM(NSUInteger, MSMenuViewControllerTableViewSectionType) {
         @(MSPaneViewControllerTypeGestures) : @"Gestures",
         @(MSPaneViewControllerTypeControls) : @"Controls",
         @(MSPaneViewControllerTypeMap) : @"Map",
+        @(MSPaneViewControllerTypeEditableTable) : @"Editable Table",
         @(MSPaneViewControllerTypeLongTable) : @"Long Table",
         @(MSPaneViewControllerTypeMonospace) : @"Monospace Ltd."
     };
@@ -127,6 +133,7 @@ typedef NS_ENUM(NSUInteger, MSMenuViewControllerTableViewSectionType) {
         @(MSPaneViewControllerTypeGestures) : [MSGesturesViewController class],
         @(MSPaneViewControllerTypeControls) : [MSControlsViewController class],
         @(MSPaneViewControllerTypeMap) : [MSMapViewController class],
+        @(MSPaneViewControllerTypeEditableTable) : [MSEditableTableViewController class],
         @(MSPaneViewControllerTypeLongTable) : [MSLongTableViewController class],
         @(MSPaneViewControllerTypeMonospace) : [MSMonospaceWebViewController class]
     };
@@ -138,6 +145,7 @@ typedef NS_ENUM(NSUInteger, MSMenuViewControllerTableViewSectionType) {
         @(MSPaneViewControllerTypeGestures) : @"Gestures",
         @(MSPaneViewControllerTypeControls) : @"Controls",
         @(MSPaneViewControllerTypeMap) : @"Map",
+        @(MSPaneViewControllerTypeEditableTable) : @"Editable Table",
         @(MSPaneViewControllerTypeLongTable) : @"Long Table",
         @(MSPaneViewControllerTypeMonospace) : @"Monospace"
     };
@@ -169,7 +177,7 @@ typedef NS_ENUM(NSUInteger, MSMenuViewControllerTableViewSectionType) {
 
 - (void)transitionToViewController:(MSPaneViewControllerType)paneViewControllerType
 {
-    // Close pane if already displaying that pane view controller
+    // Close pane if already displaying the pane view controller
     if (paneViewControllerType == self.paneViewControllerType) {
         [self.dynamicsDrawerViewController setPaneState:MSDynamicsDrawerPaneStateClosed animated:YES allowUserInterruption:YES completion:nil];
         return;
@@ -227,23 +235,18 @@ typedef NS_ENUM(NSUInteger, MSMenuViewControllerTableViewSectionType) {
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     UITableViewHeaderFooterView *headerView = [self.tableView dequeueReusableHeaderFooterViewWithIdentifier:MSDrawerHeaderReuseIdentifier];
-    headerView.textLabel.text = self.sectionTitles[@(section)];
+    headerView.textLabel.text = [self.sectionTitles[@(section)] uppercaseString];
     return headerView;
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
-{
-    return [UIView new]; // Hacky way to prevent extra dividers after the end of the table from showing
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 35.0;
+    return 30.0;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
-    return CGFLOAT_MIN; // Hacky way to prevent extra dividers after the end of the table from showing
+    return FLT_EPSILON;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -267,14 +270,6 @@ typedef NS_ENUM(NSUInteger, MSMenuViewControllerTableViewSectionType) {
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         [self.tableView reloadData];
     });
-}
-
-#pragma mark - MSDynamicsDrawerViewControllerDelegate
-
-- (void)dynamicsDrawerViewController:(MSDynamicsDrawerViewController *)dynamicsDrawerViewController didUpdateToPaneState:(MSDynamicsDrawerPaneState)state
-{
-    // Ensure that the pane's table view can scroll to top correctly
-    self.tableView.scrollsToTop = (state == MSDynamicsDrawerPaneStateOpen);
 }
 
 @end

@@ -49,8 +49,10 @@
 		3A558AC7182B136300319DA5 /* MSStylersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A558AB9182B136300319DA5 /* MSStylersViewController.m */; };
 		3A558AC9182B13C400319DA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A558AC8182B13C400319DA5 /* Assets.xcassets */; };
 		3A64F175182EDDFB00F00449 /* MSDynamicsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A64F174182EDDFB00F00449 /* MSDynamicsViewController.m */; };
+		3A7F664A18F2082E00E78146 /* MSEditableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF15311184FE70200CBDA25 /* MSEditableTableViewController.m */; };
 		3AD1E43F183AEBB40006322C /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A3CB260183AE9B40089BED5 /* Storyboard.storyboard */; };
 		3AD72A7D182CB84600B826B3 /* MSLogoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD72A7C182CB84600B826B3 /* MSLogoViewController.m */; };
+		3AF15312184FE70200CBDA25 /* MSEditableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF15311184FE70200CBDA25 /* MSEditableTableViewController.m */; };
 		64426731F992431F8994F641 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC49385B7B83484EBE303C5E /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -96,6 +98,8 @@
 		3A64F174182EDDFB00F00449 /* MSDynamicsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSDynamicsViewController.m; sourceTree = "<group>"; };
 		3AD72A7B182CB84600B826B3 /* MSLogoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSLogoViewController.h; sourceTree = "<group>"; };
 		3AD72A7C182CB84600B826B3 /* MSLogoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSLogoViewController.m; sourceTree = "<group>"; };
+		3AF15310184FE70200CBDA25 /* MSEditableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSEditableTableViewController.h; sourceTree = "<group>"; };
+		3AF15311184FE70200CBDA25 /* MSEditableTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSEditableTableViewController.m; sourceTree = "<group>"; };
 		FC49385B7B83484EBE303C5E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -229,6 +233,8 @@
 				3A558AA9182B136300319DA5 /* MSControlsViewController.m */,
 				3A558AB4182B136300319DA5 /* MSMapViewController.h */,
 				3A558AB5182B136300319DA5 /* MSMapViewController.m */,
+				3AF15310184FE70200CBDA25 /* MSEditableTableViewController.h */,
+				3AF15311184FE70200CBDA25 /* MSEditableTableViewController.m */,
 				3A558AB2182B136300319DA5 /* MSLongTableViewController.h */,
 				3A558AB3182B136300319DA5 /* MSLongTableViewController.m */,
 			);
@@ -268,9 +274,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3A116695167E8C3E00DBD12B /* MSDynamicsDrawerViewController Example */ = {
+		3A116695167E8C3E00DBD12B /* Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3A1166B4167E8C3E00DBD12B /* Build configuration list for PBXNativeTarget "MSDynamicsDrawerViewController Example" */;
+			buildConfigurationList = 3A1166B4167E8C3E00DBD12B /* Build configuration list for PBXNativeTarget "Example" */;
 			buildPhases = (
 				C47987546ECE4163B7FC9B24 /* Check Pods Manifest.lock */,
 				3A116692167E8C3E00DBD12B /* Sources */,
@@ -282,14 +288,14 @@
 			);
 			dependencies = (
 			);
-			name = "MSDynamicsDrawerViewController Example";
+			name = Example;
 			productName = Example;
 			productReference = 3A116696167E8C3E00DBD12B /* MSDynamicsDrawerViewController Example.app */;
 			productType = "com.apple.product-type.application";
 		};
-		3A3CB23F183AE98B0089BED5 /* MSDynamicsDrawerViewController Storyboard Example */ = {
+		3A3CB23F183AE98B0089BED5 /* Storyboard Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3A3CB25B183AE98B0089BED5 /* Build configuration list for PBXNativeTarget "MSDynamicsDrawerViewController Storyboard Example" */;
+			buildConfigurationList = 3A3CB25B183AE98B0089BED5 /* Build configuration list for PBXNativeTarget "Storyboard Example" */;
 			buildPhases = (
 				3A3CB240183AE98B0089BED5 /* Check Pods Manifest.lock */,
 				3A3CB241183AE98B0089BED5 /* Sources */,
@@ -301,7 +307,7 @@
 			);
 			dependencies = (
 			);
-			name = "MSDynamicsDrawerViewController Storyboard Example";
+			name = "Storyboard Example";
 			productName = Example;
 			productReference = 3A3CB25E183AE98B0089BED5 /* MSDynamicsDrawerViewController Storyboard Example.app */;
 			productType = "com.apple.product-type.application";
@@ -328,8 +334,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3A116695167E8C3E00DBD12B /* MSDynamicsDrawerViewController Example */,
-				3A3CB23F183AE98B0089BED5 /* MSDynamicsDrawerViewController Storyboard Example */,
+				3A116695167E8C3E00DBD12B /* Example */,
+				3A3CB23F183AE98B0089BED5 /* Storyboard Example */,
 			);
 		};
 /* End PBXProject section */
@@ -422,6 +428,7 @@
 			files = (
 				3AD72A7D182CB84600B826B3 /* MSLogoViewController.m in Sources */,
 				3A558ABD182B136300319DA5 /* MSAppDelegate.m in Sources */,
+				3AF15312184FE70200CBDA25 /* MSEditableTableViewController.m in Sources */,
 				3A558AC5182B136300319DA5 /* MSMapViewController.m in Sources */,
 				3A558ABF182B136300319DA5 /* MSControlsViewController.m in Sources */,
 				3A558AC0182B136300319DA5 /* MSMenuCell.m in Sources */,
@@ -443,6 +450,7 @@
 			files = (
 				3A3CB242183AE98B0089BED5 /* MSLogoViewController.m in Sources */,
 				3A3CB243183AE98B0089BED5 /* MSAppDelegate.m in Sources */,
+				3A7F664A18F2082E00E78146 /* MSEditableTableViewController.m in Sources */,
 				3A3CB244183AE98B0089BED5 /* MSMapViewController.m in Sources */,
 				3A3CB245183AE98B0089BED5 /* MSControlsViewController.m in Sources */,
 				3A3CB246183AE98B0089BED5 /* MSMenuCell.m in Sources */,
@@ -563,7 +571,7 @@
 					"COCOAPODS=1",
 					"STORYBOARD=1",
 				);
-				INFOPLIST_FILE = "Storyboard Example-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Example/Storyboard Example-Info.plist";
 				PRODUCT_NAME = "MSDynamicsDrawerViewController Storyboard Example";
 				WRAPPER_EXTENSION = app;
 			};
@@ -582,7 +590,7 @@
 					"COCOAPODS=1",
 					"STORYBOARD=1",
 				);
-				INFOPLIST_FILE = "Storyboard Example-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Example/Storyboard Example-Info.plist";
 				PRODUCT_NAME = "MSDynamicsDrawerViewController Storyboard Example";
 				WRAPPER_EXTENSION = app;
 			};
@@ -600,7 +608,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3A1166B4167E8C3E00DBD12B /* Build configuration list for PBXNativeTarget "MSDynamicsDrawerViewController Example" */ = {
+		3A1166B4167E8C3E00DBD12B /* Build configuration list for PBXNativeTarget "Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3A1166B5167E8C3E00DBD12B /* Debug */,
@@ -609,7 +617,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3A3CB25B183AE98B0089BED5 /* Build configuration list for PBXNativeTarget "MSDynamicsDrawerViewController Storyboard Example" */ = {
+		3A3CB25B183AE98B0089BED5 /* Build configuration list for PBXNativeTarget "Storyboard Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3A3CB25C183AE98B0089BED5 /* Debug */,

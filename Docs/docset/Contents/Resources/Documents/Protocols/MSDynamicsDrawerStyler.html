@@ -4,10 +4,9 @@
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
 		<title>MSDynamicsDrawerStyler Protocol Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
-		<meta name="viewport" content="width=550" />
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
-		<meta name="generator" content="appledoc 2.1 (build 840)" />
+		<meta name="generator" content="appledoc 2.2 (build 961)" />
 	</head>
 	<body>
 		<header id="top_header">
@@ -51,9 +50,9 @@
 	
 	<option value="//api/name/dynamicsDrawerViewController:didUpdatePaneClosedFraction:forDirection:">&nbsp;&nbsp;&nbsp;&nbsp;- dynamicsDrawerViewController:didUpdatePaneClosedFraction:forDirection:</option>
 	
-	<option value="//api/name/stylerWasAddedToDynamicsDrawerViewController:">&nbsp;&nbsp;&nbsp;&nbsp;- stylerWasAddedToDynamicsDrawerViewController:</option>
+	<option value="//api/name/stylerWasAddedToDynamicsDrawerViewController:forDirection:">&nbsp;&nbsp;&nbsp;&nbsp;- stylerWasAddedToDynamicsDrawerViewController:forDirection:</option>
 	
-	<option value="//api/name/stylerWasRemovedFromDynamicsDrawerViewController:">&nbsp;&nbsp;&nbsp;&nbsp;- stylerWasRemovedFromDynamicsDrawerViewController:</option>
+	<option value="//api/name/stylerWasRemovedFromDynamicsDrawerViewController:forDirection:">&nbsp;&nbsp;&nbsp;&nbsp;- stylerWasRemovedFromDynamicsDrawerViewController:forDirection:</option>
 	
 	
 	
@@ -91,9 +90,9 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/dynamicsDrawerViewController:didUpdatePaneClosedFraction:forDirection:">dynamicsDrawerViewController:didUpdatePaneClosedFraction:forDirection:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/stylerWasAddedToDynamicsDrawerViewController:">stylerWasAddedToDynamicsDrawerViewController:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/stylerWasAddedToDynamicsDrawerViewController:forDirection:">stylerWasAddedToDynamicsDrawerViewController:forDirection:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/stylerWasRemovedFromDynamicsDrawerViewController:">stylerWasRemovedFromDynamicsDrawerViewController:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/stylerWasRemovedFromDynamicsDrawerViewController:forDirection:">stylerWasRemovedFromDynamicsDrawerViewController:forDirection:</a></span></li>
 	
 </ul></li>
 
@@ -126,8 +125,8 @@
 </tr>
 						</tbody></table></div>
 					
-					
-					
+                    
+                    
 					
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
@@ -157,28 +156,24 @@
 							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/styler">+&nbsp;styler</a></code>
-		<span class="tooltip"><p>Creates and returns a styler with default configuration.</p></span>
 	</span>
 	
 	<span class="task-item-suffix">required method</span>
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/dynamicsDrawerViewController:didUpdatePaneClosedFraction:forDirection:">&ndash;&nbsp;dynamicsDrawerViewController:didUpdatePaneClosedFraction:forDirection:</a></code>
-		<span class="tooltip"><p>Invoked when the <a href="../Classes/MSDynamicsDrawerViewController.html"><code>MSDynamicsDrawerViewController</code></a> has an update to its pane closed fraction.</p></span>
 	</span>
 	
 	<span class="task-item-suffix">required method</span>
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/stylerWasAddedToDynamicsDrawerViewController:">&ndash;&nbsp;stylerWasAddedToDynamicsDrawerViewController:</a></code>
-		<span class="tooltip"><p>Used to set up the appearance of the <a href="#//api/name/styler">styler</a> when it is added to a <a href="../Classes/MSDynamicsDrawerViewController.html"><code>MSDynamicsDrawerViewController</code></a> instance.</p></span>
+		<code><a href="#//api/name/stylerWasAddedToDynamicsDrawerViewController:forDirection:">&ndash;&nbsp;stylerWasAddedToDynamicsDrawerViewController:forDirection:</a></code>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/stylerWasRemovedFromDynamicsDrawerViewController:">&ndash;&nbsp;stylerWasRemovedFromDynamicsDrawerViewController:</a></code>
-		<span class="tooltip"><p>Used to tear down the appearance of the <a href="../Protocols/MSDynamicsDrawerStyler.html#//api/name/styler">styler</a> when it is removed from a <a href="../Classes/MSDynamicsDrawerViewController.html"><code>MSDynamicsDrawerViewController</code></a> instance.</p></span>
+		<code><a href="#//api/name/stylerWasRemovedFromDynamicsDrawerViewController:forDirection:">&ndash;&nbsp;stylerWasRemovedFromDynamicsDrawerViewController:forDirection:</a></code>
 	</span>
 	
 	
@@ -298,18 +293,18 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/stylerWasAddedToDynamicsDrawerViewController:" title="stylerWasAddedToDynamicsDrawerViewController:"></a>
-	<h3 class="subsubtitle method-title">stylerWasAddedToDynamicsDrawerViewController:</h3>
+	<a name="//api/name/stylerWasAddedToDynamicsDrawerViewController:forDirection:" title="stylerWasAddedToDynamicsDrawerViewController:forDirection:"></a>
+	<h3 class="subsubtitle method-title">stylerWasAddedToDynamicsDrawerViewController:forDirection:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Used to set up the appearance of the <a href="#//api/name/styler">styler</a> when it is added to a <a href="../Classes/MSDynamicsDrawerViewController.html"><code>MSDynamicsDrawerViewController</code></a> instance.</p>
+		<p>Used to set up the appearance of the <a href="../Protocols/MSDynamicsDrawerStyler.html#//api/name/styler">styler</a> when it is added to a <a href="../Classes/MSDynamicsDrawerViewController.html"><code>MSDynamicsDrawerViewController</code></a> instance.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)stylerWasAddedToDynamicsDrawerViewController:(MSDynamicsDrawerViewController *)<em>dynamicsDrawerViewController</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)stylerWasAddedToDynamicsDrawerViewController:(MSDynamicsDrawerViewController *)<em>dynamicsDrawerViewController</em> forDirection:(MSDynamicsDrawerDirection)<em>direction</em></code></div>
 
     
 	
@@ -319,6 +314,11 @@
 		<dl class="argument-def parameter-def">
 			<dt><em>dynamicsDrawerViewController</em></dt>
 			<dd><p>The <a href="../Classes/MSDynamicsDrawerViewController.html"><code>MSDynamicsDrawerViewController</code></a> that is now being styled by the <code>MSDynamicsDrawerStyler</code> instance.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>direction</em></dt>
+			<dd><p>The direction that the <a href="../Protocols/MSDynamicsDrawerStyler.html#//api/name/styler">styler</a> is being added for. Can be a masked value.</p></dd>
 		</dl>
 		
 	</div>
@@ -344,8 +344,8 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/stylerWasRemovedFromDynamicsDrawerViewController:" title="stylerWasRemovedFromDynamicsDrawerViewController:"></a>
-	<h3 class="subsubtitle method-title">stylerWasRemovedFromDynamicsDrawerViewController:</h3>
+	<a name="//api/name/stylerWasRemovedFromDynamicsDrawerViewController:forDirection:" title="stylerWasRemovedFromDynamicsDrawerViewController:forDirection:"></a>
+	<h3 class="subsubtitle method-title">stylerWasRemovedFromDynamicsDrawerViewController:forDirection:</h3>
 	
 	
 	
@@ -355,7 +355,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)stylerWasRemovedFromDynamicsDrawerViewController:(MSDynamicsDrawerViewController *)<em>dynamicsDrawerViewController</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)stylerWasRemovedFromDynamicsDrawerViewController:(MSDynamicsDrawerViewController *)<em>dynamicsDrawerViewController</em> forDirection:(MSDynamicsDrawerDirection)<em>direction</em></code></div>
 
     
 	
@@ -365,6 +365,11 @@
 		<dl class="argument-def parameter-def">
 			<dt><em>dynamicsDrawerViewController</em></dt>
 			<dd><p>The <a href="../Classes/MSDynamicsDrawerViewController.html"><code>MSDynamicsDrawerViewController</code></a> that was being styled by the <code>MSDynamicsDrawerStyler</code> instance.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>direction</em></dt>
+			<dd><p>The direction that the <a href="../Protocols/MSDynamicsDrawerStyler.html#//api/name/styler">styler</a> is being removed for. Can be a masked value.</p></dd>
 		</dl>
 		
 	</div>
@@ -392,6 +397,8 @@
 					</div>
 					
 					
+                    
+                    
 				</div>
 				<div class="main-navigation navigation-bottom">
 					<ul>
@@ -402,9 +409,9 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 monospace. All rights reserved. (Last updated: 2013-11-18)</span><br />
+						<p><span class="copyright">&copy; 2014 monospace. All rights reserved. (Last updated: 2014-04-06)</span><br />
 						
-						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 961)</a>.</span></p>
 						
 					</div>
 				</div>

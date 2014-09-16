@@ -41,7 +41,7 @@ NSString * const MSStylerDirectionCellReuseIdentifier = @"Styler Direction Cell"
 
 @implementation MSStylersViewController
 
-#pragma mark - UIViewController
+#pragma mark - NSObject
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
@@ -50,6 +50,22 @@ NSString * const MSStylerDirectionCellReuseIdentifier = @"Styler Direction Cell"
         [self initialize];
     }
     return self;
+}
+
+#pragma mark - UIViewController
+
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        [self initialize];
+    }
+    return self;
+}
+
+- (void)loadView
+{
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
 }
 
 - (void)viewDidLoad
@@ -65,15 +81,6 @@ NSString * const MSStylerDirectionCellReuseIdentifier = @"Styler Direction Cell"
 
 #pragma mark - UITableViewController
 
-- (instancetype)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:UITableViewStyleGrouped];
-    if (self) {
-        [self initialize];
-    }
-    return self;
-}
-
 #pragma mark - MSStylersViewController
 
 - (void)initialize
@@ -81,23 +88,29 @@ NSString * const MSStylerDirectionCellReuseIdentifier = @"Styler Direction Cell"
     self.stylerClasses = @[
         [MSDynamicsDrawerScaleStyler class],
         [MSDynamicsDrawerFadeStyler class],
-        [MSDynamicsDrawerParallaxStyler class]
+        [MSDynamicsDrawerParallaxStyler class],
+        [MSDynamicsDrawerShadowStyler class],
+        [MSDynamicsDrawerResizeStyler class]
     ];
     self.stylerNames = @[
         @"Scale",
         @"Fade",
-        @"Parallax"
+        @"Parallax",
+        @"Shadow",
+        @"Drawer Resize"
     ];
     self.stylerDescriptions = @[
         @"The 'Scale' styler scales the drawer view to create a zoom-in effect as the pane view is opened",
         @"The 'Fade' styler fades the drawer view as the pane view is opened",
         @"The 'Parallax' styler translates the drawer view inwards as the pane view is opened",
+        @"The 'Shadow' styler causes the pane view to cast a shadow on the drawer view",
+        @"The 'Drawer Resize' styler resizes the drawer view controller's view to fit within drawer's reveal width"
     ];
     self.directionNames = @{
         @(MSDynamicsDrawerDirectionLeft) : @"Left",
         @(MSDynamicsDrawerDirectionRight) : @"Right",
         @(MSDynamicsDrawerDirectionTop) : @"Top",
-        @(MSDynamicsDrawerDirectionBottom) : @"Bottom",
+        @(MSDynamicsDrawerDirectionBottom) : @"Bottom"
     };
 }
 
